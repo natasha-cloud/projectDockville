@@ -1,31 +1,47 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-require("dotenv").config();
-const pug = require("pug");
-// const collection = require("./mongodb");
-const connectDB = require("./config/dbConfig")
-const port = process.env.PORT || 8080;
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import express from "express";
+import bodyParser from "body-parser";
+import userRoute from "./routes/user.js";
 
-// calling the config to run
-connectDB();
+import { join } from "path";
+import pug from "pug";
+
+// Configure .env
+dotenv.config();
+
+// Mongo Connection
+mongoose.set("strictQuery", false);
+mongoose.connect(
+  process.env.DB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  () => {
+    console.log("Connected to MongoDB");
+  }
+);
+
+// Express Config
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // importing my routes
-const routes = require('./controllers/routes.js');
-const viewsPath = path.join(__dirname, '../views');
-app.use(express.urlencoded({ extended: false}));
-app.use(express.json());app.use('/', routes);
-app.use(express.json())
+// import routes from "./controllers/routes.js";
+// const viewsPath = join(__dirname, "../views");
+// app.use("/", routes);
+app.use("/user", userRoute);
 
+// app.engine("pug", require("pug").__express);
+// app.set("view engine", "pug");
+// app.set("view", viewsPath);
+// app.set("views", join(__dirname, "views"));
 
-app.engine("pug", require("pug").__express);
-app.set("view engine", "pug");
-app.set("view",viewsPath);
-app.set("views", path.join(__dirname, "views"));
+// app.use(express.static(join(__dirname, "public")));
 
-
-
-
-app.use(express.static(path.join(__dirname, "public")))
-
-app.listen(port, () =>console.log(`server is running at http://localhost:${port}`));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () =>
+  console.log(`server is running at http://localhost:${PORT}`)
+);

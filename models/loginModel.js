@@ -1,21 +1,22 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/login")
-.then(() => {
+mongoose
+  .connect("mongodb://localhost:27017/login")
+  .then(() => {
     console.log("mongodb connected");
-})
-.catch(() =>{
+  })
+  .catch(() => {
     console.log("mongodb disconnected");
-})
+  });
 const LoginSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-    },
-    password:{
-        type:String,
-        required:true
-    }
-})
+  name: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+});
 
 module.exports = mongoose.model("Collection1", LoginSchema);
