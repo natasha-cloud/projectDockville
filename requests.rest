@@ -1,0 +1,23 @@
+### This is a lightweight alternative to postman, install REST Client extension by Huachao Mao
+
+@baseUrl = http://localhost:5000
+
+### Register
+
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+    "username": "natasha",
+    "password": "1234567890"
+}
+
+### Login
+
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+    "username": "natasha",
+    "password": "1234567890"
+}
