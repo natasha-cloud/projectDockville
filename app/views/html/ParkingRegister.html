@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" type="text/css" href="../css/ParkingRegister.css">
+  <script defer src="../js/registerValidation.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="sign-up">
+      <form action="post" class="signup-form" data-netlify="true">
+        <div class="form-btn">
+          <input id ="usernmae" placeholder="Username" type="text">
+          <div class="error"></div>
+
+          <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
+          <!-- <p class="msg">Name cannot be empty</p> -->
+        </div>
+
+        <div class="form-btn">
+          <input type="email" placeholder="Email" required>
+          <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
+          <!-- <p class="msg">Looks like this this not an email</p> -->
+        </div>
+        <div class="form-btn">
+          <input type="text" placeholder="Phone Number" required>
+          <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
+          <!-- <p class="msg">Phone Number cannot be empty</p> -->
+        </div>
+
+        <div class="form-btn">
+          <input type="password" placeholder="Password" required>
+          <!-- <img class="icon" src="images/" alt="Error"> -->
+          <!-- <p class="msg">Password cannot be empty</p> -->
+        </div>
+        <div class="form-btn">
+          <input type="password" placeholder="Confirm Password" required>
+          <!-- <img class="icon" src="images/" alt="Error"> -->
+          <!-- <p class="msg">Password cannot be empty</p> -->
+        </div>  
+
+
+        <input id="submit-btn" type="button" value="Sign Up" id="btn">
+        <p class="term">By clicking the button, you are agreeing to our <span><a href="#">Terms and Services</a></span></p>
+      </form>
+      </section>
+  </main>
+  <!-- <footer>
+    Copyright  &copy; Tindyebwa-2023.
+</footer> -->
+<script src="../js/script.js"></script>
+</body>
+</html>

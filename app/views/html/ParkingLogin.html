@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="../css/ParkingLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <p>
+            <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+            <a href="https://www.facebook.com/login/" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+        </p>
+        <p class="divider-text">
+            <span class="bg-light">OR</span>
+        </p>
+        <!-- <form> -->
+        <header><img src="../images/logo.png" alt="logo" height="50"></header>
+        <form id="formid" name="login" action="/views/html/ParkingLogin.html" onsubmit="return Validate();" method = "POST">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="email" name="email" id="email" placeholder="Email Address">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <!-- <div class="error error-txt">Email can't be blank</div> -->
+                <span id="errorEmail"></span>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" name="password" id="password" placeholder="Password" >
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <!-- <div class="error error-txt">Password can't be blank</div> -->
+                <span id="errorPassword"></span>
+            </div>
+            <div class="pass-txt"><a href="#">Forgot password?</a></div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="sign-txt">Not yet member? <a href="../html/ParkingRegister.html">Sign Up now</a></div>
+    </div>
+    <!-- <footer>
+        Copyright  &copy; Tindyebwa-2023.
+    </footer> -->
+    <script src="../js/ParkingLogin.js"></script>
+</body>
+</html>
